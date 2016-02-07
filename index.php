@@ -6,6 +6,6 @@
  * Time: 1:55 PM
  */
 
-phpinfo();
+
 
 ?>
