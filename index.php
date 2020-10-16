@@ -6,21 +6,22 @@
     <title>Names</title>
 </head>
 <body>
-<form name="dataInsert" action="insertData.php" method="post">
+
     <table>
         <tr>
-            <td>Firstname</td>
-            <td><input type="text" name="firstname" value=""></td>
+            <td>Create Record</td>
+            <td><a href="userForm.php">CLICK HERE</a></td>
         </tr>
         <tr>
-            <td>Lastname</td>
-            <td><input type="text" name="lastname" value=""></td>
+            <td>View Records</td>
+            <td><a href="readUserInformation.php">CLICK HERE</a> </td>
         </tr>
         <tr>
-            <td>Submit</td>
-            <td><input type="submit" name="submit" value="insert/update"></td>
+            <td>Search Record</td>
+            <td><a href="searchRecord.php">CLICK HERE</a> </td>
         </tr>
+
     </table>
-</form>
+
 </body>
 </html>
