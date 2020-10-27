@@ -20,7 +20,10 @@
             <td>Search Record</td>
             <td><a href="searchRecord.php">CLICK HERE</a> </td>
         </tr>
-
+        <tr>
+            <td>Movies & Shows I watch</td>
+            <td><a href="movieForm.php">CLICK HERE</a> </td>
+        </tr>
     </table>
 
 </body>

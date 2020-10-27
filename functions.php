@@ -89,3 +89,26 @@ function searchRecordByFirstName($fname) {
     $stmt->close();
     return ($row);
 }
+
+function movieandshows($a, $b, $c, $d) {
+    global $mysqli;
+    $stmt = $mysqli->prepare("
+    insert into movie
+    (
+    movieshowname,
+    timeswatched,
+    rating,
+    datewatched
+    )
+    values
+    (
+    ?,
+    ?,
+    ?,
+    ?
+    )
+    ");
+    $stmt->bind_param("sssi", $a, $b, $c, $d);
+    $stmt->execute();
+    $stmt->close();
+}
