@@ -58,9 +58,6 @@ function readUserInformation() {
     return ($row);
 }
 
-
-
-
 function searchRecordByFirstName($fname) {
     global $mysqli;
     $stmt = $mysqli->prepare("
@@ -111,4 +108,66 @@ function movieandshows($a, $b, $c, $d) {
     $stmt->bind_param("sssi", $a, $b, $c, $d);
     $stmt->execute();
     $stmt->close();
+}
+
+function readMovieInformation() {
+    global $mysqli;
+    $stmt = $mysqli->prepare("
+    select distinct
+        movieshowname, 
+        timeswatched, 
+        rating, 
+        datewatched 
+    from movie;
+    ");
+
+    $stmt->execute();
+    
+    $stmt->bind_result(
+        $resultmovieandshows,
+        $resulttimeswatched,
+        $resultrating,
+        $resultdatewatched
+    );
+    while ($stmt->fetch()){
+        $row[] = array(
+            'movieshowname' => $resultmovieandshows,
+            'timeswatched'=> $$resulttimeswatched,
+            'rating' => $resultrating,
+            'datewatched' => $resultdatewatched
+        );
+    }
+    $stmt->close();
+    return ($row);
+}
+
+function searchRecordByMovieName($moviename) {
+    global $mysqli;
+    $stmt = $mysqli->prepare("
+    select distinct
+        movieshowname, 
+        timeswatched, 
+        rating, 
+        datewatched 
+    from movie 
+    where movieshowname = ?
+    ");
+    $stmt->bind_param("s", $moviename);
+    $stmt->execute();
+    $stmt->bind_result(
+        $resultmovieandshows,
+        $resulttimeswatched,
+        $resultrating,
+        $resultdatewatched
+    );
+    while ($stmt->fetch()){
+        $row[] = array(
+            'movieshowname' => $resultmovieandshows,
+            'timeswatched'=> $$resulttimeswatched,
+            'rating' => $resultrating,
+            'datewatched' => $resultdatewatched
+        );
+    }
+    $stmt->close();
+    return ($row);
 }

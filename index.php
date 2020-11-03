@@ -24,6 +24,14 @@
             <td>Movies & Shows I watch</td>
             <td><a href="movieForm.php">CLICK HERE</a> </td>
         </tr>
+        <tr>
+            <td>List 20 Records</td>
+            <td><a href="readMovieInformation.php">List 20 Records</a></td>
+        </tr>
+        <tr>
+            <td>Search Movie Record</td>
+            <td><a href="searchMovieRecord.php">CLICK HERE</a> </td>
+        </tr>
     </table>
 
 </body>

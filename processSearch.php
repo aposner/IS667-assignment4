@@ -4,7 +4,7 @@ include_once("config.php");
 
 $searchParam = trim($_POST['searchFirstName']);
 
-echo "i am searching for " . $searchParam;
+echo "Search any movie show by name" . $searchParam;
 
 
 $resultFound = searchRecordByFirstName($searchParam);
